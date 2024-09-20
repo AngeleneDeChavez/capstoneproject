@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb01d7a304.js" crossorigin="anonymous"></script>
+    <title>Message Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #e9ecef;
+        }
+
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li.active {
+            background-color: #d1e7ff;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+
+        /* Topbar */
+        .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-box button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .icons i {
+            font-size: 24px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        /* Table styles */
+.table-container {
+    margin-top: 30px;
+    overflow: auto;
+    max-height: 400px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Scrollbars */
+.table-container::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>ITOUR</h2>
+        <ul>
+            <li class="active"><i class="fas fa-clipboard-list"></i>Registration</li>
+            <li><i class="fas fa-tachometer-alt"></i>Dashboard</li>
+            <li><i class="fas fa-file-alt"></i>Reports</li>
+            <li><i class="fas fa-envelope"></i>Message</li>
+            <li><i class="fas fa-sign-out-alt"></i>Log out</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="icons">
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+
+        <div class="table-container"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                        <th>Column 4</th>
+                        <th>Column 5</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Row 1, Col 1</td>
+                        <td>Row 1, Col 2</td>
+                        <td>Row 1, Col 3</td>
+                        <td>Row 1, Col 4</td>
+                        <td>Row 1, Col 5</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Row 2, Col 1</td>
+                        <td>Row 2, Col 2</td>
+                        <td>Row 2, Col 3</td>
+                        <td>Row 2, Col 4</td>
+                        <td>Row 2, Col 5</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Row 2, Col 1</td>
+                        <td>Row 2, Col 2</td>
+                        <td>Row 2, Col 3</td>
+                        <td>Row 2, Col 4</td>
+                        <td>Row 2, Col 5</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Row 2, Col 1</td>
+                        <td>Row 2, Col 2</td>
+                        <td>Row 2, Col 3</td>
+                        <td>Row 2, Col 4</td>
+                        <td>Row 2, Col 5</td>
+                        
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

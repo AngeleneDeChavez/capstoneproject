@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb01d7a304.js" crossorigin="anonymous"></script>
+    <title>Message Interface</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>ITOUR</h2>
+        <ul>
+            <li class="active"><i class="fas fa-clipboard-list"></i>Registration</li>
+            <li><i class="fas fa-tachometer-alt"></i><a href="list-of-actiities.html">List of Activities</a></li>
+            <li><i class="fas fa-file-alt"></i>Reports</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="icons">
+                <i class="fas fa-bell"></i>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><i class="fas fa-circle-user"></i></a>
+                    <div class="dropdown-content">
+                        <div class="user-icon">
+                            <i class="fas fa-circle-user fa-3x"></i>
+                        </div>
+                        <p>Log in as:x  </p>
+                        <a href="login/login.html">Update Information</a>
+                        <a href="login/login-admin-officer/login.html">Log Out</a>
+                    </div>
+                </li>
+            </div>
+        </div>
+
+        <div class="container">
+            <br><br><h2>Tourist Information Fill-Up Form</h2>
+            <form action="#" method="post">
+                <!-- Name -->
+                <div>
+                    <label for="first_name">First Name *</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div>
+                    <label for="surname">Surname *</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+                
+                <!-- Email and Contact -->
+                <div>
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="contact">Contact Number *</label>
+                    <input type="tel" id="contact" name="contact" required>
+                </div>
+                
+                <!-- Address -->
+                <div class="full-width">
+                    <label for="province">Province *</label>
+                    <select id="province" name="province" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="province1">Province 1</option>
+                        <option value="province2">Province 2</option>
+                        <option value="province3">Province 3</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="city">City/Municipality *</label>
+                    <select id="city" name="city" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="city1">City 1</option>
+                        <option value="city2">City 2</option>
+                        <option value="city3">City 3</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="barangay">Barangay *</label>
+                    <select id="barangay" name="barangay" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="barangay1">Barangay 1</option>
+                        <option value="barangay2">Barangay 2</option>
+                        <option value="barangay3">Barangay 3</option>
+                    </select>
+                </div>
+                
+                <!-- Number of people by age group -->
+                <div>
+                    <label for="children">Number of Children Aged (0-10 years old) *</label>
+                    <select id="children" name="children" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="youth">Number of Aged (11-30 years old) *</label>
+                    <input type="number" id="youth" name="youth" min="0" required>
+                </div>
+                <div>
+                    <label for="adults">Number of Aged (31 years old and above) *</label>
+                    <input type="number" id="adults" name="adults" min="0" required>
+                </div>
+                
+                <!-- Number of male and female -->
+                <div>
+                    <label for="male">Number of Male *</label>
+                    <input type="number" id="male" name="male" min="0" required>
+                </div>
+                <div>
+                    <label for="female">Number of Female *</label>
+                    <input type="number" id="female" name="female" min="0" required>
+                </div>
+
+                <div class="half-width">
+                    <label for="nationality">Nationality *</label>
+                    <select id="nationality" name="nationality" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="nationality1">Nationality 1</option>
+                        <option value="nationality2">Nationality 2</option>
+                        <option value="nationality3">Nationality 3</option>
+                    </select>
+                </div>
+    
+                <!-- Arrival -->
+                <div>
+                    <label for="arrival">Arrival *</label>
+                    <input type="date" id="arrival" name="arrival" required>
+                </div>
+    
+                <!-- Time -->
+                <div>
+                    <label for="arrival_time">Hour:Minute *</label>
+                    <input type="time" id="arrival_time" name="arrival_time" required>
+                </div>
+    
+                <!-- Departure -->
+                <div>
+                    <label for="departure">Departure *</label>
+                    <input type="date" id="departure" name="departure" required>
+                </div>
+    
+                <!-- Duration of Stay (Days) -->
+                <div>
+                    <label for="stay_days">Duration of Stay (Days) *</label>
+                    <select id="stay_days" name="stay_days" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="1">1 Day</option>
+                        <option value="2">2 Days</option>
+                        <option value="3">3 Days</option>
+                        <option value="4">4 Days</option>
+                    </select>
+                </div>
+    
+                <!-- Duration of Stay (Nights) -->
+                <div>
+                    <label for="stay_nights">Duration of Stay (Nights) *</label>
+                    <select id="stay_nights" name="stay_nights" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="1">1 Night</option>
+                        <option value="2">2 Nights</option>
+                        <option value="3">3 Nights</option>
+                    </select>
+                </div>
+    
+                <!-- Number of Rooms -->
+                <div>
+                    <label for="rooms">Number of Rooms *</label>
+                    <select id="rooms" name="rooms" required>
+                        <option value="" disabled selected>Please Select</option>
+                        <option value="1">1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                    </select>
+                </div>
+    
+                
+                <!-- Submit button -->
+                <div class="submit-btn">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+  
+</body>
+</html>

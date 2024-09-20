@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb01d7a304.js" crossorigin="anonymous"></script>
+    <title>Message Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #e9ecef;
+        }
+
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li.active {
+            background-color: #d1e7ff;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+        }
+
+        /* Topbar */
+        .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-box button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .icons i {
+            font-size: 24px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        /* Message Panel */
+        .message-panel {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Left panel (Recipients) */
+        .left-panel {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .left-panel h3 {
+            margin-bottom: 10px;
+        }
+
+        .left-panel input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .left-panel label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .left-panel input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .left-panel .send-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Right panel (Compose) */
+        .right-panel {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .right-panel textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Bottom Panel */
+        .bottom-panel {
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .bottom-panel table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .bottom-panel th, .bottom-panel td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .bottom-panel th {
+            background-color: #f8f9fa;
+        }
+
+        .bottom-panel td input {
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>ITOUR</h2>
+        <ul>
+            <li><i class="fas fa-clipboard-list"></i>Registration</li>
+            <li><i class="fas fa-tachometer-alt"></i>Dashboard</li>
+            <li><i class="fas fa-file-alt"></i>Reports</li>
+            <li class="active"><i class="fas fa-envelope"></i>Message</li>
+            <li><i class="fas fa-sign-out-alt"></i>Log out</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="icons">
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+
+        <!-- Message Panel -->
+        <div class="message-panel">
+
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <h3>Message</h3>
+                <label for="recipients">To:</label>
+                <input type="text" id="recipients" placeholder="Recipients">
+                <label>Insert:</label>
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-smile"></i>
+                <label>Label as:</label>
+                <input type="checkbox" id="announcement">
+                <label for="announcement">Announcement</label>
+                <input type="checkbox" id="reminders">
+                <label for="reminders">Reminders</label>
+                <button class="send-btn">Send</button>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="right-panel">
+                <h3>Compose a message</h3>
+                <textarea placeholder="Compose a message"></textarea>
+            </div>
+
+        </div>
+
+        <!-- Bottom Panel -->
+        <div class="bottom-panel">
+            <h3>Sent Messages</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>Announcement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Announcement: Lorem ipsum dolor sit amet, consectetur adipiscing elit...</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Announcement: Lorem ipsum dolor sit amet, consectetur adipiscing elit...</td>
+                    </tr>
+                    <!-- Repeat similar rows as needed -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
